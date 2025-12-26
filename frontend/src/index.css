@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav a.active{
+    color: #960bd2;
+    border-bottom: 2px solid #960bd2;
+}
+.dashboard a.active{
+    background-color: white;
+}
+.btn{
+    border: 2px solid #960bd2;
+    padding: 10px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    background:#960bd2;
+    color: white;
+    cursor: pointer;
+    border-radius:6px;
+}
+.btn:hover{
+    background:#960bd2;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+   color: #960bd2 !important;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+   color: #960bd2 !important
+}
+
+.swiper-pagination-bullet {
+   background-color: #960bd2 !important;
+}
+
+
+.swiper-pagination-bullet-active {
+   background-color: #960bd2 !important;
+}
+
