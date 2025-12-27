@@ -63,7 +63,6 @@ const Nav = () => {
                                 <span className='absolute -top-2 -right-2 bg-purple-600 text-white px-1 rounded-full text-xs'>{bookings.length}</span>
 
                             </Link>
-                            <Link to='/profile'><img src={user?.photoURL} referrerPolicy="no-referrer" className='w-10 h-10 rounded-full object-cover' /></Link>                            
                             <span onClick={() => logOut()} className='text-sm mr-4 bg-purple-600 text-white px-2 py-1 rounded-md hidden md:block'>Log Out</span>
                         </div>
                             :
