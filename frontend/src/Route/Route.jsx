@@ -18,6 +18,8 @@ import AdminRoute from "./AdminRoute";
 import Orders from "../Dashboard/Orders";
 import Profile from "../components/Profile";
 
+const API = import.meta.env.VITE_API_URL;
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -42,7 +44,7 @@ export const router = createBrowserRouter([
       {
         path: '/carDetails/:id',
         element: <CardDetails />,
-        loader: ({ params }) => fetch(`http://localhost:5000/carDetails/${params.id}`)
+        loader: ({ params }) => fetch(`${API}/carDetails/${params.id}`)
       }
     ]
   },
