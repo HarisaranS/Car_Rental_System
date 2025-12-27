@@ -1,22 +1,27 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
 
-const uri = "mongodb://localhost:27017";
-const client = new MongoClient(uri);
+if (!process.env.MONGO_URI) {
+  console.error("MONGO_URI is not defined");
+  process.exit(1);
+}
+
+const client = new MongoClient(process.env.MONGO_URI);
 
 async function run() {
   try {
     await client.connect();
     console.log("Connected to MongoDB!");
 
-    const database = client.db("carDB");
+    const database = client.db("car");
     const usersCollection = database.collection("users");
     const carsCollection = database.collection("cars");
     const bookingsCollection = database.collection("bookings");
@@ -217,7 +222,7 @@ async function run() {
           name: "Admin",
           email: "admin@gmail.com",
           password: "123456",
-          photo: "https://via.placeholder.com/150",
+          photo: "https://avatars.githubusercontent.com/u/189494774?v=4",
           role: "admin"
         };
         await usersCollection.insertOne(adminUser);
