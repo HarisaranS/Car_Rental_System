@@ -1,11 +1,10 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import Root from "../layout/Root";
 import About from "../pages/AboutPage/About";
 import Home from "../pages/homePage/Home";
 import Login from "../pages/Auth/Login";
 import Register from "../pages/Auth/Register";
 import Dashboard from "../Dashboard/Dashboard";
-import Statistics from "../Dashboard/Statistics";
 import ManageItems from "../Dashboard/ManageCars";
 import AllUsers from "../Dashboard/AllUsers";
 import ManageBookings from "../Dashboard/ManageBookings";
@@ -53,8 +52,8 @@ export const router = createBrowserRouter([
     element: <PrivateRoute><Dashboard /></PrivateRoute>,
     children: [
       {
-        path: 'statistics',
-        element: <PrivateRoute><Statistics /></PrivateRoute>
+        index: true,
+        element: <Navigate to='manageBookings' replace />
       },
       {
         path: 'addCar',

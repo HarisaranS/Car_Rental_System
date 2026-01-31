@@ -1,7 +1,7 @@
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import toast from 'react-hot-toast'
 import useAuth from "../../hooks/useAuth";
-import GoogleLogin from "./GoogleLogin";
+
 import { useState } from "react";
 import { PiSpinnerGapThin } from "react-icons/pi";
 const Login = () => {
@@ -59,7 +59,7 @@ const Login = () => {
                     <Link to='/login' className="text-sm hover:underline hover:text-purple-500">Forgot password ?</Link>
                 </div>
                 <hr />
-                <GoogleLogin />
+
                 <p className="text-center">New here ? <Link to='/register' className=" font-semibold hover:underline">Register</Link></p>
 
             </form>

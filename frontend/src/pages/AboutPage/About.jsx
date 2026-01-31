@@ -1,4 +1,3 @@
-import Agent from "./Agents";
 import Banner from "./Banner";
 import Details from "./Details";
 
@@ -7,7 +6,6 @@ const About = () => {
         <div>
             <Banner />
             <Details />
-            <Agent/>
 
         </div>
     );

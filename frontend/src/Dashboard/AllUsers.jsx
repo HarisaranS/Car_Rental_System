@@ -79,12 +79,10 @@ const AllUsers = () => {
                             <col />
                             <col />
                             <col />
-                            <col />
                         </colgroup>
                         <thead>
                             <tr className="text-left">
                                 <th className="p-3">SL</th>
-                                <th className="p-3">Photo</th>
                                 <th className="p-3">Name</th>
                                 <th className="p-3">Email</th>
                                 <th className="p-3">Role</th>
@@ -97,17 +95,7 @@ const AllUsers = () => {
                                     <td className="p-3">
                                         <p>{i + 1}</p>
                                     </td>
-                                    <td className="p-3">
-                                        {user.photo ? (
-                                            <img src={user.photo} className="w-10 h-10 object-cover rounded-full" alt="Profile" />
-                                        ) : (
-                                            <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center">
-                                                <span className="text-gray-600 text-sm font-semibold">
-                                                    {user.name ? user.name.charAt(0).toUpperCase() : 'U'}
-                                                </span>
-                                            </div>
-                                        )}
-                                    </td>
+
                                     <td className="p-3">
                                         <p>{user.name}</p>
                                     </td>

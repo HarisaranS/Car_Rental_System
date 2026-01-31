@@ -222,7 +222,6 @@ async function run() {
           name: "Admin",
           email: "admin@gmail.com",
           password: "123456",
-          photo: "https://avatars.githubusercontent.com/u/189494774?v=4",
           role: "admin"
         };
         await usersCollection.insertOne(adminUser);

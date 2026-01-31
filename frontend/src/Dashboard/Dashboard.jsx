@@ -1,5 +1,4 @@
 import { Link, NavLink, Outlet } from 'react-router-dom'
-import { SiAlwaysdata } from "react-icons/si";
 import { VscDiffAdded } from "react-icons/vsc";
 import { BiFoodMenu } from "react-icons/bi";
 import { MdPayments } from "react-icons/md";
@@ -20,11 +19,7 @@ const Dashboard = () => {
 
                 <ul className='*:font-serif text-lg *:p-2 *: *:w-full mt-10 space-y-4 *:border *:border-[#b5a108] dashboard'>
 
-                    <NavLink to='statistics' className='flex items-center space-x-3'>
-                        <SiAlwaysdata className='text-xl' />
-                        <span>Statistics</span>
 
-                    </NavLink>
 
 
                     {/* only admin can access the routes */}

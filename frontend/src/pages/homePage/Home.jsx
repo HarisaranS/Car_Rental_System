@@ -1,5 +1,5 @@
 import Banner from "./Banner";
-import Cars from "./Cars";
+// import Cars from "./Cars";
 import Sub_banner from "./Sub_banner";
 
 
@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div>
             <Banner />
-            <Cars />
+            {/* <Cars /> */}
             <Sub_banner />
         </div>
     );

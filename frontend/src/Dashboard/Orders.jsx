@@ -7,32 +7,32 @@ import toast from "react-hot-toast";
 
 
 const Orders = () => {
-   const axiosPublic = useAxiosPublic();
-   const { data: orders = [], refetch } = useQuery({
-      queryKey : ['orders'],
-      queryFn : async() =>{
-         const res = await axiosPublic.get('/orders')
-         return res.data;
-      }
-   })
+    const axiosPublic = useAxiosPublic();
+    const { data: orders = [], refetch } = useQuery({
+        queryKey: ['orders'],
+        queryFn: async () => {
+            const res = await axiosPublic.get('/bookings')
+            return res.data;
+        }
+    })
 
-   const handleDelete = async id =>{
-      const res = await axiosPublic.delete(`/booking/${id}`)
-      if(res.data.deletedCount > 0){
-         toast.success('Item has been deleted')
-         refetch();
-         
-      }
-   }
+    const handleDelete = async id => {
+        const res = await axiosPublic.delete(`/booking/${id}`)
+        if (res.data.deletedCount > 0) {
+            toast.success('Item has been deleted')
+            refetch();
 
-   return (
-      <div>
-         <DashboardTitle title='Manage Orders' desc="Lorem ipsum is most popular text in the world. text in the world." />
+        }
+    }
 
-         <p>orders : {orders?.length}</p>
-         {
+    return (
+        <div>
+            <DashboardTitle title='Manage Orders' desc="Lorem ipsum is most popular text in the world. text in the world." />
+
+            <p>orders : {orders?.length}</p>
+            {
                 orders.length === 0 ? <div className="flex items-center justify-center flex-col space-y-6">
-                    <PiEmptyThin className="text-4xl sm:text-6xl"/>
+                    <PiEmptyThin className="text-4xl sm:text-6xl" />
                     <h2 className="text-lg sm:text-xl">No cars has been booked yet!</h2>
                     <Link to='/cars' className="btn">Brows Car</Link>
                 </div> : <>
@@ -47,13 +47,10 @@ const Orders = () => {
                                     <col />
                                     <col />
                                     <col />
-                                    <col />
-                                    <col />
                                 </colgroup>
                                 <thead>
                                     <tr className="text-left">
                                         <th className="p-3">SL</th>
-                                        <th className="p-3">Photo</th>
                                         <th className="p-3">Title</th>
                                         <th className="p-3">Tour Code</th>
                                         <th className="p-3">Name</th>
@@ -69,13 +66,10 @@ const Orders = () => {
                                                 <p>{i + 1}</p>
                                             </td>
                                             <td className="p-3">
-                                                <img src={booking.photo} className="w-10 h-10 object-cover" />
+                                                <p>{booking.carTitle}</p>
                                             </td>
                                             <td className="p-3">
-                                                <p>{booking.title}</p>
-                                            </td>
-                                            <td className="p-3">
-                                                <p>{booking.tourCode}</p>
+                                                <p>{booking.carId ? booking.carId.slice(-6).toUpperCase() : 'N/A'}</p>
                                             </td>
                                             <td className="p-3">
                                                 <p>{booking.userName}</p>
@@ -103,8 +97,8 @@ const Orders = () => {
                     </div>
                 </>
             }
-      </div>
-   );
+        </div>
+    );
 };
 
 export default Orders;

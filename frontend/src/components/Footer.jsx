@@ -15,17 +15,17 @@ const Footer = () => {
                   <span><a
                      className="text-[0.9rem] flex items-center gap-[8px] cursor-pointer">
                      <IoLocationOutline className="text-[1.2rem]" />
-                     Barisha-Sadar, Bangaldesh.
+                     Coimbatore, TamilNadu
                   </a></span>
                   <span><a
                      className="text-[0.9rem] flex items-center gap-[8px] hover:text-blue-400 cursor-pointer">
                      <MdOutlineEmail className="text-[1.1rem]" />
-                     mdarmankhan6252@gmail.com
+                     admin@gmail.com
                   </a></span>
                   <span><a
                      className="text-[0.9rem] flex items-center gap-[8px] hover:text-blue-400 cursor-pointer">
                      <MdOutlineLocalPhone className="text-[1.1rem]" />
-                     +8801875778050
+                     +91 9876543210
                   </a></span>
                </div>
             </div>
@@ -72,7 +72,7 @@ const Footer = () => {
                </div>
             </div>
          </div>
-         <p className="text-[12px] text-center py-4">All Right Reserved - MD Arman Khan</p>
+         <p className="text-[12px] text-center py-4">All Right Reserved - admin@gmail.com</p>
       </footer>
    );
 };

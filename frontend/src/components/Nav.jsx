@@ -9,15 +9,15 @@ import useBookings from '../hooks/useBookings';
 
 const Nav = () => {
     const { user, logOut } = useAuth();
-    
+
 
     const [scrollPosition, setScrollPosition] = useState(0)
     const [showNav, setShowNav] = useState(true)
     const [menu, setMenu] = useState(false)
     const [bookings] = useBookings();
-   
 
-    
+
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -50,8 +50,8 @@ const Nav = () => {
                     <NavLink to='/'>Home</NavLink>
                     <NavLink to='/about'>About</NavLink>
                     <NavLink to='/cars'>Cars</NavLink>
-                    {user && <NavLink to='/dashboard/statistics'>Dashboard</NavLink>}
-                    
+                    {user && <NavLink to='/dashboard'>Dashboard</NavLink>}
+
 
                 </ul>
 
@@ -77,14 +77,14 @@ const Nav = () => {
 
                 <ul className={`font-semibold text-gray-600 nav  absolute flex flex-col items-start bg-white w-[250px] h-screen top-0 right-0 py-5 pl-10 pr-2 space-y-5 md:hidden duration-500  ${menu ? 'mr-0' : '-mr-72'}`}>
                     <div className='w-full flex items-center justify-end'>
-                       {user && <span onClick={() => logOut()} className='text-sm mr-4 bg-red-600 text-white px-2 py-1 rounded-md'>Log Out</span>}
+                        {user && <span onClick={() => logOut()} className='text-sm mr-4 bg-red-600 text-white px-2 py-1 rounded-md'>Log Out</span>}
                         <IoCloseOutline
-                        onClick={() => setMenu(false)} className='text-3xl cursor-pointer' />
+                            onClick={() => setMenu(false)} className='text-3xl cursor-pointer' />
                     </div>
                     <NavLink to='/'>Home</NavLink>
                     <NavLink to='/about'>About</NavLink>
                     <NavLink to='/cars'>Cars</NavLink>
-                    {user && <NavLink to='/dashboard/statistics'>Dashboard</NavLink>}
+                    {user && <NavLink to='/dashboard'>Dashboard</NavLink>}
                     {!user && <NavLink to='login'>Login</NavLink>}
 
                 </ul>

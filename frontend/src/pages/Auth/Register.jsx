@@ -2,7 +2,6 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import toast from 'react-hot-toast'
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import useAuth from "../../hooks/useAuth";
-import GoogleLogin from "./GoogleLogin";
 import { useState } from "react";
 import { PiSpinnerGapThin } from "react-icons/pi";
 
@@ -23,10 +22,10 @@ const Register = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        
+
         try {
             const result = await axiosPublic.post('/auth/register', { name, email, password });
-            
+
             if (result.data.success) {
                 setUser({ email, displayName: name, role: 'user' });
                 toast.success("Account created successfully!");
@@ -61,7 +60,6 @@ const Register = () => {
                     }
                 </button>
                 <hr />
-                <GoogleLogin />
                 <p className="text-center text-sm">Already Have an Account ? <Link to='/login' className=" font-semibold hover:underline">Login</Link></p>
             </form>
         </div>
