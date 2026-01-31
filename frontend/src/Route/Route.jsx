@@ -18,6 +18,7 @@ import Orders from "../Dashboard/Orders";
 import Profile from "../components/Profile";
 
 const API = import.meta.env.VITE_API_URL;
+console.log("Route API URL Loader:", API);
 
 export const router = createBrowserRouter([
   {
